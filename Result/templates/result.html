@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style type="text/css">
+      body {
+            background-image: url("https://c1.wallpaperflare.com/preview/409/845/307/pencil-paper-writing-education.jpg");
+            background-size: cover; /* Adjust background size as needed */
+            background-position: center; /* Adjust background position as needed */
+            background-repeat: no-repeat;
+        }
+      .card {
+ width: 300px;
+ height: 300px;
+ background: white;
+ border-radius: 10px;
+ transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shadow {
+ box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+
+    </style>
+</head>
+<center>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="card shadow">
+
+    <h1>Result</h1>
+    <p>Total Marks: {{ total_marks }}</p>
+    <p>Average Status: {{ average_marks }}</p>
+    <p>Status: {% if pass_status %} Pass {% else %} Fail {% endif %}</p>
+    {% if not pass_status %}
+        <p>Failed Subjects:</p>
+        <ul>
+            {% for subject in failed_subjects %}
+                <li>{{ subject }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+</body>
+    </center>
+</html>
